@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+  <table>
+    <thead>
+      <tr>
+        <th>ユーザー名</th>
+      </tr>
+    </thead>
+
+    <% @users.each do |user| %>
+    <tbody>
+      <tr>
+        <td><%= link_to user_path(user.id) do %>
+        <%= user.name %>
+        <% end %></td>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
+  </div>
+</div>
