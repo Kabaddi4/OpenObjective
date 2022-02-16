@@ -1,0 +1,9 @@
+<div class="container">
+ <div class="row">
+   <% if user_signed_in? %>
+   <p>ようこそ<%= @user.name %>さん、目標を公言しやりきる習慣を身に付けましょう!</p>
+   <% else %>
+   <p>ようこそ、目標を公言しやりきる習慣を身に付けましょう!</p>
+   <% end %>
+ </div>
+</div>
