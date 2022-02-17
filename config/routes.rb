@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'homes#top'
 
-  resources :users, only:[:index, :show]
+  resources :users, only:[:index, :show] do
+    member do
+      get :follows, :followers
+    end
+    resources :relationships, only: [:create, :destroy]
+  end
 end
