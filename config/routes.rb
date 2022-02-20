@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   end
 
   resources :targets, only:[:index, :show, :new]
+
+  get 'target/result' => 'targets#result'
 end

@@ -11,6 +11,7 @@
   <body>
     <header>
       <% if user_signed_in? %>
+        <%= link_to "目標一覧", targets_path %>
         <%= link_to "ユーザー一覧", users_path %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>

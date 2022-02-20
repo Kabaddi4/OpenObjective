@@ -1,5 +1,21 @@
 <div class="container">
   <div class="row">
-    
+  <h3>Object</h3>
+  <% if user_signed_in? %>
+    <%= link_to "CreateObject", new_target_path %>
+  <% else %>
+  <% end %>
+  <table>
+    <% @targets.each do |target| %>
+    <tbody>
+    <tr>
+      <%#target.user.name%>
+      <td><%= target.title %></td>
+      <td><%= target.created_at %></td>
+    </tr>
+    </tbody>
+    <% end %>
+  </table>
+
   </div>
 </div>

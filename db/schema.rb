@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_20_111854) do
+ActiveRecord::Schema.define(version: 2022_02_20_120931) do
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_02_20_111854) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
-    t.string "body"
+    t.string "detail"
     t.string "image_id"
     t.boolean "result"
     t.string "feedback"
