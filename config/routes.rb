@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     end
     resources :relationships, only: [:create, :destroy]
   end
+
+  resources :targets, only:[:index, :show, :new]
 end

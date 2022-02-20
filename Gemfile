@@ -65,3 +65,9 @@ gem 'devise'
 
 #デバッグ
 gem 'pry-byebug'
+
+#環境変数
+gem 'dotenv-rails'
+
+#画像
+gem 'refile'
