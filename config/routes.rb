@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
   end
 
-  resources :targets, only:[:index, :show, :new]
+  resources :targets, only:[:index, :show, :new, :create]
 
   get 'target/result' => 'targets#result'
 end

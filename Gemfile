@@ -71,3 +71,5 @@ gem 'dotenv-rails'
 
 #画像
 gem 'refile'
+
+#BootStrap

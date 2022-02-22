@@ -2,7 +2,7 @@
   <div class="row">
   <h2>CreateObject</h2>
 
-  <% form_with model:@target, local:true do |f| %>
+  <%= form_with model:@target, local:true do |f| %>
   <div class="form-group">
     <label for="target_title">title</label>
     <%= f.text_field :title, class:"form-control target_title" %>
@@ -10,8 +10,10 @@
 
   <div class="form-group">
     <label for="target_detail">detail</label>
-    <%= f.text_field :title, class:"form-control target_title" %>
+    <%= f.text_field :detail, class:"form-control target_detail" %>
   </div>
+
+    <%= f.submit 'CreateObject' %>
   <% end %>
   </div>
 </div>
