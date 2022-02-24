@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.new(target_id: target.id)
     favorite.save
     #非同期実装の際消去
-    redirect_to target_path(target)
+
   end
 
   def destroy
@@ -13,6 +13,6 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(target_id: target.id)
     favorite.destroy
     #非同期実装の際消去
-    redirect_to target_path(target)
+
   end
 end
