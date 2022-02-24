@@ -18,5 +18,3 @@
 //= require turbolinks
 //= require_tree .
 
-var title = "Test javascript"
-alert(title);

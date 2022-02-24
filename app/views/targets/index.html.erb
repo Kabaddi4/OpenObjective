@@ -5,6 +5,9 @@
     <%= link_to "CreateObject", new_target_path %>
   <% else %>
   <% end %>
+  </div>
+
+  <div class="row">
   <table>
     <% @targets.each do |target| %>
     <tbody>
@@ -16,6 +19,5 @@
     </tbody>
     <% end %>
   </table>
-
   </div>
 </div>

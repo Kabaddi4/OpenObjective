@@ -6,8 +6,8 @@ class TargetsController < ApplicationController
 
   def create
     @targets = Target.all
-    @target = Target.new(target_params)
-    if @target.save
+    target = Target.new(target_params)
+    if target.save
       redirect_to targets_path
     else
       render :index
