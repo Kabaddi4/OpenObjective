@@ -21,9 +21,10 @@
     <tr>
       <%#target.user.name%>
       <div class="mx-2 py-3">
+        <td><%=target.title%></td>
         <td><%= link_to target_path(target.id) do %>
-            <%=target.title%><% end %></td>
-        <td><%= target.created_at %></td>
+        <%= target.created_at %><% end %></td>
+        <td class="text-center"><%= target.user.name %></td>
       </div>
     </tr>
     </tbody>

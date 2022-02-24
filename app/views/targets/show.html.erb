@@ -1,13 +1,33 @@
 <div class="container">
   <div class="row">
-    <h4 class="">目標:</h4><%= @target.title %>
-    概要：<%= @target.detail %>
+    <h4 class="">目標:</h4>
+    <p><%= @target.title %></p>
+  </div>
+
+  <div class="row">
+    <h4>概要：</h4>
+    <p><%= @target.detail %></p>
+  </div>
+
+  <div class="row">
+    <% if @target.favorited_by?(current_user) %>
+      <p>
+        <%= link_to target_favorites_path(@target), method: :delete do %>
+          ♥<%= @target.favorites.count %>いいね
+        <% end %>
+      </p>
+    <% else %>
+     <p>
+        <%= link_to target_favorites_path(@target), method: :post do %>
+          ♡<%= @target.favorites.count %>いいね
+        <% end %>
+      </p>
+    <% end %>
   </div>
 
   <div class="row">
     <% if user_signed_in? %>
     <%= link_to "投稿を削除", target_path, method: :delete %>
-    <% else %>
     <% end %>
   </div>
 </div>

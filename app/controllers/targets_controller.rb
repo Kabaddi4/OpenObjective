@@ -7,7 +7,6 @@ class TargetsController < ApplicationController
   def create
     @targets = Target.all
     @target = Target.new(target_params)
-    binding.pry
     @target.user_id = current_user.id
     if @target.save
       redirect_to targets_path
