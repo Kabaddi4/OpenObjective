@@ -15,13 +15,14 @@
       <p id="favorite_<%= @target.id %>">
         <%= link_to target_favorites_path(@target), method: :delete, remote: true do %>
           ♥<%= @target.favorites.count %>いいね
-          <%= render "favorites/favorite" %>
+          <%= render 'target_favorites_path', { target: @target, url: target_path(@target) } %>
         <% end %>
       </p>
     <% else %>
      <p id="favorite_<%= @target.id %>">
         <%= link_to target_favorites_path(@target), method: :post, remote: true do %>
           ♡<%= @target.favorites.count %>いいね
+          <%= render 'target_favorites_path', {target: @target, url: target_path(@target) } %>
         <% end %>
       </p>
     <% end %>

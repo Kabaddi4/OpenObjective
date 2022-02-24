@@ -20,6 +20,7 @@ class TargetsController < ApplicationController
   end
 
   def show
+    @targets = Target.all
     @target = Target.find(params[:id])
   end
 
