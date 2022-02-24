@@ -9,12 +9,22 @@
 
   <div class="row">
   <table>
+    <thead>
+      <tr>
+        <th>目標</th>
+        <th class="text-center">作成日時</th>
+        <th>作成ユーザー</th>
+      </tr>
+    </thead>
     <% @targets.each do |target| %>
     <tbody>
     <tr>
       <%#target.user.name%>
-      <td><%= target.title %></td>
-      <td><%= target.created_at %></td>
+      <div class="mx-2 py-3">
+        <td><%= link_to target_path(target.id) do %>
+            <%=target.title%><% end %></td>
+        <td><%= target.created_at %></td>
+      </div>
     </tr>
     </tbody>
     <% end %>

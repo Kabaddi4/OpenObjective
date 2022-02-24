@@ -3,4 +3,11 @@
     <h4 class="">目標:</h4><%= @target.title %>
     概要：<%= @target.detail %>
   </div>
+
+  <div class="row">
+    <% if user_signed_in? %>
+    <%= link_to "投稿を削除", target_path, method: :delete %>
+    <% else %>
+    <% end %>
+  </div>
 </div>

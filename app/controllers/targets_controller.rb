@@ -6,8 +6,10 @@ class TargetsController < ApplicationController
 
   def create
     @targets = Target.all
-    target = Target.new(target_params)
-    if target.save
+    @target = Target.new(target_params)
+    binding.pry
+    @target.user_id = current_user.id
+    if @target.save
       redirect_to targets_path
     else
       render :index
@@ -21,6 +23,14 @@ class TargetsController < ApplicationController
   def show
     @target = Target.find(params[:id])
   end
+
+  def destroy
+    target = Target.find(params[:id])
+    target.destroy
+    redirect_to targets_path
+  end
+
+
   private
 
   def target_params
