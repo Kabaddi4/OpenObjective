@@ -17,7 +17,7 @@
   </div>
 
   <div class="row">
-    <% if user_signed_in? %>
+    <% if current_user.id == @target.user.id %>
     <%= link_to "投稿を削除", target_path, method: :delete %>
     <% end %>
   </div>

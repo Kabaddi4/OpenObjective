@@ -11,7 +11,7 @@
   <table>
     <thead>
       <tr>
-        <th>目標</th>
+        <th class="text-center">目標</th>
         <th class="text-center">作成日時</th>
         <th>作成ユーザー</th>
       </tr>
@@ -21,9 +21,9 @@
     <tr>
       <%#target.user.name%>
       <div class="mx-2 py-3">
-        <td><%=target.title%></td>
-        <td><%= link_to target_path(target.id) do %>
-        <%= target.created_at %><% end %></td>
+        <td class="text-center"><%= target.created_at %></td>
+        <td class="text-center"><%= link_to target_path(target.id) do %>
+        <%=target.title%><% end %></td>
         <td class="text-center"><%= target.user.name %></td>
       </div>
     </tr>
