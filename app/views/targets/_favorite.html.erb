@@ -1,0 +1,17 @@
+<div class="row">
+    <% if target.favorited_by?(current_user) %>
+      <p id="favorite_<%= target.id %>">
+        <%= link_to target_favorites_path(target), method: :delete, remote: true do %>
+          ♥<%= target.favorites.count %>いいね
+
+        <% end %>
+      </p>
+    <% else %>
+     <p id="favorite_<%= target.id %>">
+        <%= link_to target_favorites_path(target), method: :post, remote: true do %>
+          ♡<%= target.favorites.count %>いいね
+
+        <% end %>
+      </p>
+    <% end %>
+</div>
