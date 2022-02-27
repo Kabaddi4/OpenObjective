@@ -10,8 +10,11 @@
   </div>
 
   <%#いいね%>
+  <%#eachで取り出してない為、ローカル変数ではエラーになる%>
 
-  <%= render 'targets/favorite', target: @target %>
+  <div id="favorite_<%= @target.id %>">
+    <%= render 'targets/favorite', target: @target %>
+  </div>
 
   <div class="row">
     <% if user_signed_in? %>
