@@ -11,7 +11,7 @@
 
   <%#いいね%>
   <%#eachで取り出してない為、ローカル変数ではエラーになる%>
-
+  <% if user_signed_in? %>
   <div id="favorite_<%= @target.id %>">
     <%= render 'targets/favorite', target: @target %>
   </div>
@@ -20,5 +20,6 @@
     <% if current_user.id == @target.user.id %>
     <%= link_to "投稿を削除", target_path, method: :delete %>
     <% end %>
+  <% end %>
   </div>
 </div>
