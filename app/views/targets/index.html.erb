@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-  <h3>Object</h3>
+  <h3 class="px-3">Object</h3>
   <% if user_signed_in? %>
-    <%= link_to "CreateObject", new_target_path %>
+    <%= link_to "CreateObject", new_target_path, class: "btn btn-primary" %>
   <% else %>
   <% end %>
   </div>

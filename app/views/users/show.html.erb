@@ -3,13 +3,10 @@
     ユーザー名：<%= @user.name %>
   </div>
 
-  <div class="row">
-  <% if user_signed_in? && @user == current_user %>
-  ログイン中です
-  <%= link_to 'フォロー一覧', follows_user_path %><%= link_to 'フォロワー一覧', followers_user_path %>
-  <% end %>
-  </div>
 
+  <div class="row">
+    <%= link_to 'フォロー一覧', follows_user_path, class:"btn btn-secondary" %><%= link_to 'フォロワー一覧', followers_user_path, class:"btn btn-secondary text-dark" %>
+  </div>
   <div class="row">
   <% if current_user != @user %>
     <% if current_user.following?(@user) %>
@@ -23,5 +20,27 @@
   <div class="row">
     フォロー：<%= @following_users.count %>
     フォロワー：<%= @follower_users.count %>
+  </div>
+
+  <h2 class="text-secondary">―――設定目標―――</h2>
+   <div class="row">
+
+  <% if user_signed_in? && @user == current_user %>
+
+    <table>
+      <thead>
+        <tr>
+          <td class="text-center">目標</td>
+        </tr>
+      </thead>
+      <% @targets.each do |target| %>
+      <tbody>
+        <tr>
+          <td class="px-2 py-2"><%= target.title %></td>
+        </tr>
+      </tbody>
+    <% end %>
+    </table>
+  <% end %>
   </div>
 </div>
