@@ -76,3 +76,7 @@ gem 'refile'
 gem 'bootstrap', '~>4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~>5.13'
+
+#ページング機能(method page/pagenate使用可)
+
+gem 'kaminari', '~> 1.2.1'
