@@ -1,7 +1,10 @@
 class TargetsController < ApplicationController
 
+#helper_method :sort_column, :sort_direction
+
   def index
     @targets = Target.all
+    @stocks = @targets.stocks.order("#{sort_column} #{sort_direction}")
   end
 
   def create
@@ -35,5 +38,15 @@ class TargetsController < ApplicationController
 
   def target_params
   params.require(:target).permit(:title, :detail, :image_id, :result, :feedback, :created_at, :updated_at)
+  end
+
+  #%w = 簡易的変数定義 include?(x) true : false
+  def sort_direction
+  %w[asc, desc].include?(params[:direction]) ? params[:direction] : 'asc'
+  end
+
+
+  def sort_column
+  Target.column_names.include?(params[:sort]) ? params[:sort] : 'id'
   end
 end
