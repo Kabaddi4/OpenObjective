@@ -9,13 +9,18 @@
   </head>
 
   <body>
-    <header>
+    <header class="pl-3 my-2">
       <% if user_signed_in? %>
+      <div class="row text-border">
+        ようこそ、<%= current_user.name %>さん
+      </div>
+      <div class="row">
         <%= link_to "目標一覧", targets_path %>
-        <%= link_to "ユーザー一覧", users_path %>
+        <%= link_to "マイページ", user_path(current_user.id), class: "px-2" %>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
       <% else %>
-        <%= link_to "新規登録", new_user_registration_path %>
+        <%= link_to "新規登録", new_user_registration_path, class: "px-2" %>
         <%= link_to "ログイン", user_session_path %>
       <% end %>
     </header>
