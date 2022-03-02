@@ -1,10 +1,9 @@
 class TargetsController < ApplicationController
 
-#helper_method :sort_column, :sort_direction
+helper_method :sort_column, :sort_direction
 
   def index
-    @targets = Target.all
-    @stocks = @targets.stocks.order("#{sort_column} #{sort_direction}")
+    @targets = Target.all.order("#{sort_column} #{sort_direction}")
   end
 
   def create
