@@ -1,12 +1,22 @@
 <div class="container">
 
+  <div class="row">
+  <%= form_with url: targets_search_path, method: :get, local: true do |f| %>
+    <%= f.text_field :keyword, value: @keyword %>
+    <%= f.submit "検索" %>
+  <% end %>
+  </div>
+
   <div class="row my-3 mx-3">
   <h3 class="px-3 text-secondary">目標一覧</h3>
   <% if user_signed_in? %>
     <%= link_to "CreateObject", new_target_path, class: "btn btn-primary" %>
   <% else %>
   <% end %>
+
   </div>
+
+
 
   <div class="row py-3">
   <table>

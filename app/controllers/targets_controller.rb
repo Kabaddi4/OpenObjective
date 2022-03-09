@@ -26,6 +26,12 @@ helper_method :sort_column, :sort_direction
     @target = Target.find(params[:id])
   end
 
+  def search
+    @target_search = Target.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   def destroy
     target = Target.find(params[:id])
     target.destroy
