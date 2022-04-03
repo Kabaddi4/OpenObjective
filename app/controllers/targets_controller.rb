@@ -4,6 +4,8 @@ helper_method :sort_column, :sort_direction
 
   def index
     @targets = Target.all.order("#{sort_column} #{sort_direction}")
+
+    @targets = @targets.where('title LIKE ?', "%#{params[:search]}%") if params[:search].present?
   end
 
   def create
@@ -24,12 +26,6 @@ helper_method :sort_column, :sort_direction
   def show
     @targets = Target.all
     @target = Target.find(params[:id])
-  end
-
-  def search
-    @target_search = Target.search(params[:keyword])
-    @keyword = params[:keyword]
-    render "index"
   end
 
   def destroy
